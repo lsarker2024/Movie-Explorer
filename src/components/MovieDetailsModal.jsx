@@ -22,7 +22,7 @@ const MovieDetailsModal = ({movieId, onClose}) => {
     
     return(
         <div className="fixed inset-0 flex justify-center items-center">
-            <div className="h-[800px] w-[400px] bg-gray-100 shadow-2xl rounded-2xl">
+            <div className="h-[720px] w-[400px] bg-gray-100 shadow-2xl rounded-2xl">
                 <article data-movie="Movie Title One Action 2026" className="overflow-hidden rounded-[18px] border border-white/10 bg-[#101521] transition hover:-translate-y-1 hover:border-white/20 relative">
                     <button type="button" 
                         className="absolute right-3 top-3  pr-4  rounded-full text-white hover:text-amber-800 drop-shadow-black"
@@ -33,17 +33,16 @@ const MovieDetailsModal = ({movieId, onClose}) => {
                     <div className="grid aspect-[2/3] place-items-center bg-[radial-gradient(circle_at_50%_25%,rgba(255,183,3,.25),transparent_22%),linear-gradient(145deg,#202a40,#17101f)] text-5xl">
                             <img src={movieData.image.original} alt="" />
                     </div>
-                    <div className="p-4">
+                    <div className="p-3">
                             <h2 className="text-xl font-semibold">{movieData.name}</h2>
                             <span className="text-base text-slate-500">📅 <span>•Release Date•</span> {movieData.premiered}</span>
                     </div>
-                    <div className="p-4">
+                    <div className="p-3">
                         <h2 className="text-xl">Overview</h2>
-                        Duration: {movieData.averageRuntime} minutes <br />
-                        Language: {movieData.language} <br />
-                       
-                        {movieData.summary.replace(/<\/?[^>]+(>|$)/g, "")}
-                        
+                        Duration: {movieData.averageRuntime} minutes
+                        <p className="text-sm font-light">
+                            {movieData.summary.replace(/<\/?[^>]+(>|$)/g, "")}
+                        </p>
                     </div>
                 </article>
                 
